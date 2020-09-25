@@ -27,7 +27,7 @@ Nodo *selectionSort(Nodo *orig)
             r = r->next_node();
         }
 
-        Equipo* equipoTemporal = temp->getEquipo();
+        Equipo *equipoTemporal = temp->getEquipo();
         temp->setEquipo(min->getEquipo());
         min->setEquipo(equipoTemporal);
         temp = temp->next_node();
@@ -80,12 +80,11 @@ int main(int argc, char *argv[])
 
     selectionSort(tope);
     int contParaIndice = 1;
-    cout  << "                " << "PJ   G  E  P  GA  GC  DG  PTS" <<  endl;
+    cout << "                " << "PJ" << setw(4) << "G" << setw(5) << "E" << setw(5) << "P" << setw(6) << "GA" << setw(5) << "GC" << setw(5) << "DG" << setw(5) << "PTS" << endl;
 
     while (tope != NULL)
     {
-        cout << contParaIndice << " " << left << setw(14) << tope->getEquipo()->getNombre() << setw(3) << tope->getEquipo()->getPartidosTotal() << "  " << tope->getEquipo()->getPartidosGanados() << "  " << tope->getEquipo()->getPartidosEmpatados() << "  " << tope->getEquipo()->getPartidosPerdidos() <<"  "; 
-        cout << right << setw(2) <<  tope->getEquipo()->getGolesAFavor() << "  " << tope->getEquipo()->getGolesContra() << "  " << tope->getEquipo()->getDifGoles() << "  " << tope->getEquipo()->getPuntos() << endl;
+        cout << contParaIndice << " " << left << setw(14) << tope->getEquipo()->getNombre() << setw(5) << tope->getEquipo()->getPartidosTotal() << setw(5) << tope->getEquipo()->getPartidosGanados() << setw(5) << tope->getEquipo()->getPartidosEmpatados() << setw(5) << tope->getEquipo()->getPartidosPerdidos() << setw(5) << tope->getEquipo()->getGolesAFavor() << setw(5) << tope->getEquipo()->getGolesContra() << setw(5) << tope->getEquipo()->getDifGoles() << setw(5) << tope->getEquipo()->getPuntos() << endl;
         tope = tope->next_node();
         contParaIndice++;
     }
