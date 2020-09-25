@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp -o run
+	g++ main.cpp Equipo.hpp Nodo.hpp -o run
